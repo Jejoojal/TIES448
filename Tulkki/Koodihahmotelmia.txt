@@ -1,0 +1,75 @@
+PROGRAM basicRequirementsSample(input1, input2){ //Avainsanat ISOLLA? Kommentit kahden kauttaviivaparin väliin?//
+	a := 1; //Sijoitus :=. Rivi päättyy ";"-merkkiin //
+	b := 2; //Halutaanko mahdollistaa sijoitus molempiin suuntiin?//
+	c := a + b;
+	ret := 0;
+	IF(c < input1){
+		FOR(input1 - c){ // FOR:iin "parametri"-sulkujen sisään suoraan suorituskertojen määrä? Tämä tapahtuisi siis (input1 - c) kertaa//
+			c := c + 1;
+			ret := ret + 1;
+		}
+	} ELSE {
+		RETURN 0;
+	}
+	ret := ret + input2;
+	RETURN (ret); //Pitäisi kai palauttaa (input1 + input 2 - 3), kun input1 > 3. Muuten palauttaa 0// 
+}
+
+//Kommenttitesti//
+PROGRAM commentTest(){
+	//Tää ei tee mitään//
+	RETURN;
+}
+
+//Kokonaislukuaritmetiikkatesti//
+PROGRAM arithmeticsTest(){
+	a := 2 - 1; //1//
+	b := 1 + 1; //2//
+	c := 6 / 2; //3//
+	d := 2 * 2; //4//
+	x := a + d / b * c - a; // 1 + 4 / 2 * 3 - 1 = 6 //
+	y := x / (a + b) // 6 / (1 + 2) = 2 //
+	z := c * x / y; // 3 * 6 / 2 = 9; 
+	RETURN (z); //Palauttaa 9 //
+}
+//Ehtolausetesti//
+PROGRAM conditionTest(input){
+	IF(input = 0){
+		RETURN 1;
+	} ELSE {
+		RETURN 0;
+	}
+	RETURN (2); // Palauttaa 1, jos syöte = 0, muuten palauttaa 0//
+}
+
+//Silmukkatesti//
+PROGRAM loopTest(input1, input2){
+	ret := 0;
+	FOR(input1){
+		ret := ret + input2;
+	}
+	RETURN (ret); //Palauttaa input1 * input2//
+}
+
+//MuuttujaTesti//
+PROGRAM variableTest(){
+	a := 1;
+	aamu := 2;
+	RETURN (a + aamu); //Palauttaa 3//
+}
+
+//Syöte- ja tulostetesti 1//
+PROGRAM inputOutputTest1(input){
+	RETURN (input + input); //Palauttaa syötteen kerrottuna kahdella//
+}
+
+//Syöte- ja tulostetesti 2//
+PROGRAM inputOutputTest2(input){
+	RETURN (input); //Palauttaa syötteen//
+}
+
+//Syöte- ja tulostetesti 3//
+PROGRAM inputOutputTest3(input){
+	a := input;
+	RETURN (0); //Palauttaa 0//
+}
